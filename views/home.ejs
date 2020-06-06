@@ -1,4 +1,8 @@
 <%- include('partials/header'); -%>
 <h1><%=HOME%></h1>
 <p><%=CONTENT%></p>
+<%for(var i=0;i<POSTS.length;i++){%>
+  <h1><%=POSTS[i]["title"]%></h1>
+  <p><%=POSTS[i]["Body"]%></p>
+<%}%>
 <%- include('partials/footer'); -%>
