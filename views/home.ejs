@@ -1,8 +1,17 @@
+<%# adding header template to the page %>
 <%- include('partials/header'); -%>
+<%# setting title of the page using EJS %>
 <h1><%=HOME%></h1>
+<!-- displaying content using EJS -->
 <p><%=CONTENT%></p>
+<%# Adding every new composed blog to the home page %>
 <%for(var i=0;i<POSTS.length;i++){%>
-  <h1><%=POSTS[i]["title"]%></h1>
-  <p><%=POSTS[i]["Body"]%></p>
+  <%# truncating content of the blog to 100 characters to be displayed on the home page %>
+  <%let myString=POSTS[i].Body.substring(0,100)+"....";%>
+  <h1><%=POSTS[i].title%></h1>
+  <p><%=myString%></p>
+  <!-- setting a readmore link which takes to the full dedicated page to a blog post -->
+  <a id='a' href="/posts/<%=POSTS[i].title%>" + head>Read more</a>
 <%}%>
+<%# including footer template to the page %>
 <%- include('partials/footer'); -%>

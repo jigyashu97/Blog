@@ -1,14 +1,19 @@
+<%# adding header template in header.ejs %>
 <%- include('partials/header'); -%>
 <h1><%=HOME%></h1>
+<!-- to handle post requests on compose page -->
 <form  action="/Compose" method="post">
   <div class="form-group">
+    <!-- make a oneline title columnn to add title of new blog post -->
     <label for="Title">Title</label>
     <input type="text" class="form-control" name="Title">
   </div>
   <div class="form-group">
+    <!-- make multiline block for adding content of the blog post -->
     <label for="bodytext">Post</label>
-    <textarea class="form-control" maxlength="100" rows="5" name="bodytext"></textarea>
+    <textarea class="form-control" rows="5" name="bodytext"></textarea>
   </div>
   <button class="btn btn-primary"type="submit">Publish</button>
 </form>
+<!-- adding footer template to the page -->
 <%- include('partials/footer'); -%>
